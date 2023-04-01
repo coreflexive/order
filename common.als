@@ -53,3 +53,7 @@ pred linear(s: set univ, r: s->s) {
   partial_order[s,r]
   connected[s,r]
 }
+
+pred discrete(s: set univ, r: s->s) {
+  r = iden:>s
+}
