@@ -57,3 +57,4 @@ pred linear(s: set univ, r: s->s) {
 pred discrete(s: set univ, r: s->s) {
   r = iden:>s
 }
+
