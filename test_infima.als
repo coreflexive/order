@@ -223,7 +223,7 @@ check { -- (3.20) Top
 	implies
 	all y: A {
 
-		below[A,R,top[A,R],y]
+		y -> (top[A,R]) in R
 
 	}
 }
