@@ -58,3 +58,10 @@ pred discrete(s: set univ, r: s->s) {
   r = iden:>s
 }
 
+pred comparable(A: set univ, R: A->A, x,y: A) {
+	x->y in R + ~R
+}
+
+pred incomparable(A: set univ, R: A->A, x,y: A) {
+	not comparable[A,R,x,y]
+}
