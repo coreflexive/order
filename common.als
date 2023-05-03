@@ -22,6 +22,10 @@ pred symmetric(s: set univ, r: s->s) {
   r in ~r
 }
 
+pred asymmetric(s: set univ, r: s->s) {
+  no r & ~r
+}
+
 pred connected(s: set univ, r: s->s) {
   r + ~r = s->s
 }
@@ -56,6 +60,11 @@ pred linear(s: set univ, r: s->s) {
 
 pred discrete(s: set univ, r: s->s) {
   r = iden:>s
+}
+
+pred strict_order(V: set univ, C: V->V) {
+  transitive[V,C]
+  asymmetric[V,C]
 }
 
 pred comparable(A: set univ, R: A->A, x,y: A) {
