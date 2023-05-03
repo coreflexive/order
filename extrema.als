@@ -44,3 +44,31 @@ fun sup(A: set univ, R: A->A, S: set A) : set A {
 fun bot(A: set univ, R: A->A) : set A {
 	sup[A,R,none]
 }
+
+-- Least (min)
+pred least(A: set univ, R: A->A, Y: set A, x: A) {
+	x in Y
+	x in below[A,R,Y]
+}
+
+fun least(A: set univ, R: A->A, Y: set A) : set Y {
+	Y & below[A,R,Y]
+}
+
+fun min(A: set univ, R: A->A, Y: set A) : set Y {
+	least[A,R,Y]
+}
+
+-- Greatest (max)
+pred greatest(A: set univ, R: A->A, Y: set A, x: A) {
+	x in Y
+	x in above[A,R,Y]
+}
+
+fun greatest(A: set univ, R: A->A, Y: set A) : set Y {
+	Y & above[A,R,Y]
+}
+
+fun max(A: set univ, R: A->A, Y: set A) : set Y {
+	greatest[A,R,Y]
+}
